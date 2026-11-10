@@ -5733,8 +5733,7 @@ define signext i8 @cmpxchg_i8_monotonic_monotonic_val0(ptr %ptr, i8 signext %cmp
 ; RV32IA-NEXT:    and a6, a5, a3
 ; RV32IA-NEXT:    bne a6, a1, .LBB47_3
 ; RV32IA-NEXT:  # %bb.2: # in Loop: Header=BB47_1 Depth=1
-; RV32IA-NEXT:    xor a6, a5, a2
-; RV32IA-NEXT:    and a6, a6, a3
+; RV32IA-NEXT:    xor a6, a6, a2
 ; RV32IA-NEXT:    xor a6, a5, a6
 ; RV32IA-NEXT:    sc.w a6, a6, (a0)
 ; RV32IA-NEXT:    bnez a6, .LBB47_1
@@ -5759,8 +5758,7 @@ define signext i8 @cmpxchg_i8_monotonic_monotonic_val0(ptr %ptr, i8 signext %cmp
 ; RV32I-ZALRSC-NEXT:    and a6, a5, a3
 ; RV32I-ZALRSC-NEXT:    bne a6, a1, .LBB47_3
 ; RV32I-ZALRSC-NEXT:  # %bb.2: # in Loop: Header=BB47_1 Depth=1
-; RV32I-ZALRSC-NEXT:    xor a6, a5, a2
-; RV32I-ZALRSC-NEXT:    and a6, a6, a3
+; RV32I-ZALRSC-NEXT:    xor a6, a6, a2
 ; RV32I-ZALRSC-NEXT:    xor a6, a5, a6
 ; RV32I-ZALRSC-NEXT:    sc.w a6, a6, (a0)
 ; RV32I-ZALRSC-NEXT:    bnez a6, .LBB47_1
@@ -5800,8 +5798,7 @@ define signext i8 @cmpxchg_i8_monotonic_monotonic_val0(ptr %ptr, i8 signext %cmp
 ; RV64IA-NEXT:    and a6, a5, a3
 ; RV64IA-NEXT:    bne a6, a1, .LBB47_3
 ; RV64IA-NEXT:  # %bb.2: # in Loop: Header=BB47_1 Depth=1
-; RV64IA-NEXT:    xor a6, a5, a2
-; RV64IA-NEXT:    and a6, a6, a3
+; RV64IA-NEXT:    xor a6, a6, a2
 ; RV64IA-NEXT:    xor a6, a5, a6
 ; RV64IA-NEXT:    sc.w a6, a6, (a0)
 ; RV64IA-NEXT:    bnez a6, .LBB47_1
@@ -5826,8 +5823,7 @@ define signext i8 @cmpxchg_i8_monotonic_monotonic_val0(ptr %ptr, i8 signext %cmp
 ; RV64I-ZALRSC-NEXT:    and a6, a5, a3
 ; RV64I-ZALRSC-NEXT:    bne a6, a1, .LBB47_3
 ; RV64I-ZALRSC-NEXT:  # %bb.2: # in Loop: Header=BB47_1 Depth=1
-; RV64I-ZALRSC-NEXT:    xor a6, a5, a2
-; RV64I-ZALRSC-NEXT:    and a6, a6, a3
+; RV64I-ZALRSC-NEXT:    xor a6, a6, a2
 ; RV64I-ZALRSC-NEXT:    xor a6, a5, a6
 ; RV64I-ZALRSC-NEXT:    sc.w a6, a6, (a0)
 ; RV64I-ZALRSC-NEXT:    bnez a6, .LBB47_1
@@ -5871,8 +5867,7 @@ define i1 @cmpxchg_i8_monotonic_monotonic_val1(ptr %ptr, i8 signext %cmp, i8 sig
 ; RV32IA-NEXT:    and a5, a4, a3
 ; RV32IA-NEXT:    bne a5, a1, .LBB48_3
 ; RV32IA-NEXT:  # %bb.2: # in Loop: Header=BB48_1 Depth=1
-; RV32IA-NEXT:    xor a5, a4, a2
-; RV32IA-NEXT:    and a5, a5, a3
+; RV32IA-NEXT:    xor a5, a5, a2
 ; RV32IA-NEXT:    xor a5, a4, a5
 ; RV32IA-NEXT:    sc.w a5, a5, (a0)
 ; RV32IA-NEXT:    bnez a5, .LBB48_1
@@ -5897,8 +5892,7 @@ define i1 @cmpxchg_i8_monotonic_monotonic_val1(ptr %ptr, i8 signext %cmp, i8 sig
 ; RV32I-ZALRSC-NEXT:    and a5, a4, a3
 ; RV32I-ZALRSC-NEXT:    bne a5, a1, .LBB48_3
 ; RV32I-ZALRSC-NEXT:  # %bb.2: # in Loop: Header=BB48_1 Depth=1
-; RV32I-ZALRSC-NEXT:    xor a5, a4, a2
-; RV32I-ZALRSC-NEXT:    and a5, a5, a3
+; RV32I-ZALRSC-NEXT:    xor a5, a5, a2
 ; RV32I-ZALRSC-NEXT:    xor a5, a4, a5
 ; RV32I-ZALRSC-NEXT:    sc.w a5, a5, (a0)
 ; RV32I-ZALRSC-NEXT:    bnez a5, .LBB48_1
@@ -5937,8 +5931,7 @@ define i1 @cmpxchg_i8_monotonic_monotonic_val1(ptr %ptr, i8 signext %cmp, i8 sig
 ; RV64IA-NEXT:    and a5, a4, a3
 ; RV64IA-NEXT:    bne a5, a1, .LBB48_3
 ; RV64IA-NEXT:  # %bb.2: # in Loop: Header=BB48_1 Depth=1
-; RV64IA-NEXT:    xor a5, a4, a2
-; RV64IA-NEXT:    and a5, a5, a3
+; RV64IA-NEXT:    xor a5, a5, a2
 ; RV64IA-NEXT:    xor a5, a4, a5
 ; RV64IA-NEXT:    sc.w a5, a5, (a0)
 ; RV64IA-NEXT:    bnez a5, .LBB48_1
@@ -5963,8 +5956,7 @@ define i1 @cmpxchg_i8_monotonic_monotonic_val1(ptr %ptr, i8 signext %cmp, i8 sig
 ; RV64I-ZALRSC-NEXT:    and a5, a4, a3
 ; RV64I-ZALRSC-NEXT:    bne a5, a1, .LBB48_3
 ; RV64I-ZALRSC-NEXT:  # %bb.2: # in Loop: Header=BB48_1 Depth=1
-; RV64I-ZALRSC-NEXT:    xor a5, a4, a2
-; RV64I-ZALRSC-NEXT:    and a5, a5, a3
+; RV64I-ZALRSC-NEXT:    xor a5, a5, a2
 ; RV64I-ZALRSC-NEXT:    xor a5, a4, a5
 ; RV64I-ZALRSC-NEXT:    sc.w a5, a5, (a0)
 ; RV64I-ZALRSC-NEXT:    bnez a5, .LBB48_1
@@ -6011,8 +6003,7 @@ define signext i16 @cmpxchg_i16_monotonic_monotonic_val0(ptr %ptr, i16 signext %
 ; RV32IA-NEXT:    and a6, a3, a5
 ; RV32IA-NEXT:    bne a6, a1, .LBB49_3
 ; RV32IA-NEXT:  # %bb.2: # in Loop: Header=BB49_1 Depth=1
-; RV32IA-NEXT:    xor a6, a3, a2
-; RV32IA-NEXT:    and a6, a6, a5
+; RV32IA-NEXT:    xor a6, a6, a2
 ; RV32IA-NEXT:    xor a6, a3, a6
 ; RV32IA-NEXT:    sc.w a6, a6, (a0)
 ; RV32IA-NEXT:    bnez a6, .LBB49_1
@@ -6038,8 +6029,7 @@ define signext i16 @cmpxchg_i16_monotonic_monotonic_val0(ptr %ptr, i16 signext %
 ; RV32I-ZALRSC-NEXT:    and a6, a3, a5
 ; RV32I-ZALRSC-NEXT:    bne a6, a1, .LBB49_3
 ; RV32I-ZALRSC-NEXT:  # %bb.2: # in Loop: Header=BB49_1 Depth=1
-; RV32I-ZALRSC-NEXT:    xor a6, a3, a2
-; RV32I-ZALRSC-NEXT:    and a6, a6, a5
+; RV32I-ZALRSC-NEXT:    xor a6, a6, a2
 ; RV32I-ZALRSC-NEXT:    xor a6, a3, a6
 ; RV32I-ZALRSC-NEXT:    sc.w a6, a6, (a0)
 ; RV32I-ZALRSC-NEXT:    bnez a6, .LBB49_1
@@ -6081,8 +6071,7 @@ define signext i16 @cmpxchg_i16_monotonic_monotonic_val0(ptr %ptr, i16 signext %
 ; RV64IA-NEXT:    and a6, a3, a5
 ; RV64IA-NEXT:    bne a6, a1, .LBB49_3
 ; RV64IA-NEXT:  # %bb.2: # in Loop: Header=BB49_1 Depth=1
-; RV64IA-NEXT:    xor a6, a3, a2
-; RV64IA-NEXT:    and a6, a6, a5
+; RV64IA-NEXT:    xor a6, a6, a2
 ; RV64IA-NEXT:    xor a6, a3, a6
 ; RV64IA-NEXT:    sc.w a6, a6, (a0)
 ; RV64IA-NEXT:    bnez a6, .LBB49_1
@@ -6108,8 +6097,7 @@ define signext i16 @cmpxchg_i16_monotonic_monotonic_val0(ptr %ptr, i16 signext %
 ; RV64I-ZALRSC-NEXT:    and a6, a3, a5
 ; RV64I-ZALRSC-NEXT:    bne a6, a1, .LBB49_3
 ; RV64I-ZALRSC-NEXT:  # %bb.2: # in Loop: Header=BB49_1 Depth=1
-; RV64I-ZALRSC-NEXT:    xor a6, a3, a2
-; RV64I-ZALRSC-NEXT:    and a6, a6, a5
+; RV64I-ZALRSC-NEXT:    xor a6, a6, a2
 ; RV64I-ZALRSC-NEXT:    xor a6, a3, a6
 ; RV64I-ZALRSC-NEXT:    sc.w a6, a6, (a0)
 ; RV64I-ZALRSC-NEXT:    bnez a6, .LBB49_1
@@ -6155,8 +6143,7 @@ define i1 @cmpxchg_i16_monotonic_monotonic_val1(ptr %ptr, i16 signext %cmp, i16 
 ; RV32IA-NEXT:    and a4, a3, a5
 ; RV32IA-NEXT:    bne a4, a1, .LBB50_3
 ; RV32IA-NEXT:  # %bb.2: # in Loop: Header=BB50_1 Depth=1
-; RV32IA-NEXT:    xor a4, a3, a2
-; RV32IA-NEXT:    and a4, a4, a5
+; RV32IA-NEXT:    xor a4, a4, a2
 ; RV32IA-NEXT:    xor a4, a3, a4
 ; RV32IA-NEXT:    sc.w a4, a4, (a0)
 ; RV32IA-NEXT:    bnez a4, .LBB50_1
@@ -6182,8 +6169,7 @@ define i1 @cmpxchg_i16_monotonic_monotonic_val1(ptr %ptr, i16 signext %cmp, i16 
 ; RV32I-ZALRSC-NEXT:    and a4, a3, a5
 ; RV32I-ZALRSC-NEXT:    bne a4, a1, .LBB50_3
 ; RV32I-ZALRSC-NEXT:  # %bb.2: # in Loop: Header=BB50_1 Depth=1
-; RV32I-ZALRSC-NEXT:    xor a4, a3, a2
-; RV32I-ZALRSC-NEXT:    and a4, a4, a5
+; RV32I-ZALRSC-NEXT:    xor a4, a4, a2
 ; RV32I-ZALRSC-NEXT:    xor a4, a3, a4
 ; RV32I-ZALRSC-NEXT:    sc.w a4, a4, (a0)
 ; RV32I-ZALRSC-NEXT:    bnez a4, .LBB50_1
@@ -6224,8 +6210,7 @@ define i1 @cmpxchg_i16_monotonic_monotonic_val1(ptr %ptr, i16 signext %cmp, i16 
 ; RV64IA-NEXT:    and a4, a3, a5
 ; RV64IA-NEXT:    bne a4, a1, .LBB50_3
 ; RV64IA-NEXT:  # %bb.2: # in Loop: Header=BB50_1 Depth=1
-; RV64IA-NEXT:    xor a4, a3, a2
-; RV64IA-NEXT:    and a4, a4, a5
+; RV64IA-NEXT:    xor a4, a4, a2
 ; RV64IA-NEXT:    xor a4, a3, a4
 ; RV64IA-NEXT:    sc.w a4, a4, (a0)
 ; RV64IA-NEXT:    bnez a4, .LBB50_1
@@ -6251,8 +6236,7 @@ define i1 @cmpxchg_i16_monotonic_monotonic_val1(ptr %ptr, i16 signext %cmp, i16 
 ; RV64I-ZALRSC-NEXT:    and a4, a3, a5
 ; RV64I-ZALRSC-NEXT:    bne a4, a1, .LBB50_3
 ; RV64I-ZALRSC-NEXT:  # %bb.2: # in Loop: Header=BB50_1 Depth=1
-; RV64I-ZALRSC-NEXT:    xor a4, a3, a2
-; RV64I-ZALRSC-NEXT:    and a4, a4, a5
+; RV64I-ZALRSC-NEXT:    xor a4, a4, a2
 ; RV64I-ZALRSC-NEXT:    xor a4, a3, a4
 ; RV64I-ZALRSC-NEXT:    sc.w a4, a4, (a0)
 ; RV64I-ZALRSC-NEXT:    bnez a4, .LBB50_1

@@ -881,20 +881,19 @@ bool RISCVExpandPseudoAtomicsImpl::expandAtomicCmpXchg(
         .addMBB(LoopHeadBNETarget);
 
     // .looptail:
-    //   xor scratch, dest, newval
-    //   and scratch, scratch, mask
+    //   xor scratch, scratch, newval
     //   xor scratch, dest, scratch
     //   sc.w scratch, scratch, (adrr)
     //   bnez scratch, loophead
-    // A zero newval needs only the last xor: scratch still holds dest & mask
-    // from .loophead.
-    if (NewValReg == RISCV::X0)
+    // scratch still holds dest & mask from .loophead, and newval has no bits
+    // outside mask, so this replaces the masked bits of dest with newval.
+    if (NewValReg != RISCV::X0)
       BuildMI(LoopTailMBB, DL, TII->get(RISCV::XOR), ScratchReg)
-          .addReg(DestReg)
-          .addReg(ScratchReg);
-    else
-      insertMaskedMerge(DL, LoopTailMBB, ScratchReg, DestReg, NewValReg,
-                        MaskReg, ScratchReg);
+          .addReg(ScratchReg)
+          .addReg(NewValReg);
+    BuildMI(LoopTailMBB, DL, TII->get(RISCV::XOR), ScratchReg)
+        .addReg(DestReg)
+        .addReg(ScratchReg);
     BuildMI(LoopTailMBB, DL, TII->get(getSCForRMW(Ordering, Width)), ScratchReg)
         .addReg(ScratchReg)
         .addReg(AddrReg);
